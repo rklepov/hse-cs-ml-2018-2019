@@ -1,0 +1,7 @@
+[123, 
+    123, 
+    {1: "abacaba",
+     'key2': True,
+     'key3': None,
+    },
+]
