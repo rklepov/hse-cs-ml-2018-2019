@@ -1,0 +1,185 @@
+<HTML> <TITLE>Description van de Bunt data </TITLE>
+
+<head>
+<STYLE TYPE="text/css">
+<!--
+table
+   {
+   font-family: verdana;
+   font-size: 10pt;
+   }
+code
+   {
+   font-size: 12pt;
+    font-weight: bold;
+   }
+-->
+</STYLE>
+</head>
+
+<font face = Verdana size=4>
+
+<H2 align="center"> <p><i> Description students data sets van de Bunt  <p></i> </H2>
+
+<p>
+This
+data set was collected by Gerhard van de Bunt, and is discussed extensively in
+van de Bunt (1999) and van de Bunt, van Duijn, and Snijders (1999).
+It is used as example in the manual and in
+various methodological articles about <i>SIENA</i>.
+
+
+<p><i>
+<h3> Background</h3></i><p>
+The data were collected among a group of university freshmen who, except for a few existing
+relationships (acquaintances from a former school), did not know each other at the first
+measurement (time=<i>t0</i>). The data were collected at 7 time points. The first four time points
+are three weeks apart, whereas the last three time points are six weeks apart.
+The original
+group consisted of 49 students, but due to ‘university drop-outs’ and after deleting those
+who did not fill in the questionnaire four or more times, a group was obtained of 32
+students for whom almost complete data are available.
+<p>
+
+The students were asked to rate their relationships on a six point scale,
+with response categories described as follows.
+<p>
+
+
+
+<table  >
+ <tr width =" 100pt">
+   <td>
+    <i>Label</i>
+        <img src="spacer.gif" height="1" width="200">
+   </td>
+   <td>
+     <i>Description of the response categories</i>
+   </td>
+ </tr>
+ <tr>
+   <td>
+1. Best friendship
+   </td>
+   <td>
+Persons whom you would call your ‘real’ friends
+   </td>
+ </tr>
+ <tr>
+   <td>
+2. Friendship <br> &nbsp;
+   </td>
+   <td>
+Persons with whom you have a good relationship, but whom you do not (yet) consider
+a ‘real’ friend
+   </td>
+ </tr>
+ <tr>
+   <td>
+3. Friendly relationship <br> &nbsp;
+   </td>
+   <td>
+Persons with whom you regularly have pleasant contact during classes. The contact
+could grow into a friendship
+   </td>
+ </tr>
+ <tr>
+   <td>
+4. Neutral relationship <br> &nbsp;
+   </td>
+   <td>
+Persons with whom you have not much in common. In case of an accidental meeting
+the contact is good. The chance of it growing into a friendship is not large
+   </td>
+ </tr>
+ <tr>
+   <td>
+0. Unknown person
+   </td>
+   <td>
+Persons whom you do not know
+   </td>
+ </tr>
+ <tr>
+   <td>
+5. Troubled relationship <br> &nbsp;
+   </td>
+   <td>
+Persons with whom you can’t get on very well, and with whom you definitely do not
+want to start a relationship. There is a certain risk of getting into a conflict
+   </td>
+ </tr>
+</table>
+<p>
+
+Next to the sociometric data, available individual characteristics are
+sex, education program, and smoking behavior.
+Smoking was only allowed in special areas. As a consequence, the ‘smokers’ had
+to separate themselves from the ‘non-smokers’ if they wished to smoke (which they often did
+during coffee and lunch breaks). Thus, contact opportunities differed between actors because
+of their smoking behavior. The education program was important because, although all
+started to study at the same moment, there were three groups, following different courses.
+During the first months all programs overlapped largely, but after a few months, the programs
+diverged. Especially the 2-year program was quite different from the other two programs.
+Therefore, this attribute also gives information on the individuals’ contact opportunities.
+<p>
+
+
+
+<p><i>
+<h3> Coding </h3></i><p>
+The digraph data files
+are <code> vrnd32t0.dat</code> to <code> vrnd32t6.dat</code>.
+The networks are coded as 0 = unknown, 1 = best friend, 2 = friend,
+3 = friendly relation, 4 = neutral, 5 = troubled relation, 6 = item
+non-response, 9 = actor non-response. Note that 6 and 9 are
+missing data codes.
+<p>
+The actor attributes are in the file <code> vars.dat</code>. Variables
+are, respectively, gender (1 = <i>F</i>, 2 = <i>M</i>), program (2-year, 3-year, 4-year),
+and smoking
+(1 = yes, 2 = no). See the references mentioned above for further
+information about this network and the actor attributes.
+
+
+<p><i>
+<h3> Batch file operation </h3></i><p>
+The zip file also contains example .in files and example batch files.
+These can be used to try out working with Siena outside of Stocnet. 
+One may proceed as follows.
+<br>
+Make a directory containing all files in vdBunt_data.zip and also containing
+the most recent versions of Siena0*.exe (these can be obtained from the
+downloads tab of the Siena homepage).
+In particular, Siena01.exe, Siena03.exe , and Siena07.exe  are needed.
+<br>
+Execute first (double click) the batch file bunt23456_1.bat, 
+then bunt23456_3.bat, then bunt23456_7.bat. 
+This should produce a Siena session with an output file
+using 5 waves of data.
+<p>
+
+
+<h3> References </h3><p>
+<ul>
+<li> Van de Bunt, G.G. 1999. <i> Friends by choice.
+An actor-oriented statistical network model for friendship
+networks through time.</i> Amsterdam: Thesis Publishers.
+<li>
+Van de Bunt, G.G., M.A.J. van Duijn, and T.A.B. Snijders. 1999.
+<a href="vdBunt_vDuijn_Snijders.pdf" target="_top">
+Friendship networks through time:
+An actor-oriented statistical network model.
+</a>
+<i> Computational and Mathematical Organization Theory</i>, 5, 167-192.
+</ul>
+<br><p>
+
+</body> </html>
+
+
+
+
+
+</body>
+</html>

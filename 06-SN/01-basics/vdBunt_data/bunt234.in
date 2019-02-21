@@ -1,0 +1,32 @@
+@1[general information about SIENA project hbunti:]
+3 [number of waves]
+32 [number of actors]
+1 [number of dependent network variables]
+0 [number of dependent actor variables]
+1 [number of files with constant actor covariates]
+0 [number of exogenous changing actor covariates]
+0 [number of constant dyadic covariates]
+0 [number of exogenous changing dyadic covariates]
+0 [indicator for file with composition change directives]
+
+@2[network files in temporal order; names follow:]
+vrnd32t2.dat
+1 2 3 [code for tie]
+6 9 [code for missing]
+vrnd32t3.dat
+1 2 3 [code for tie]
+6 9 [code for missing]
+vrnd32t4.dat
+1 2 3 [code for tie]
+6 9 [code for missing]
+friendship
+
+@4[files with constant actor covariates:]
+vars.dat
+3 [number of covariates in this file; names follow:]
+99 [code for missing]
+gender
+99 [code for missing]
+program
+99 [code for missing]
+smoke
