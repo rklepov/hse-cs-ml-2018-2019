@@ -102,3 +102,25 @@ venv.bak/
 
 # mypy
 .mypy_cache/
+
+################################################################################
+#
+# custom settings
+#
+
+# local .gitignore
+**/.gitignore
+
+# zipped archives
+*.zip
+*.tar.gz
+*.tar.bz2
+
+# saved model states
+*.h5
+
+# catboost temporary files
+**/catboost_info/
+
+# local only files
+/git*
