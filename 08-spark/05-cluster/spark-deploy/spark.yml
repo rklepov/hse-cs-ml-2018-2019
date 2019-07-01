@@ -1,0 +1,102 @@
+
+---
+
+- hosts: all
+  gather_facts: no
+  tags:
+    - always
+  tasks:
+    - set_fact:
+        spark_dir: "{{ spark_root }}/spark-2.4.0-bin-hadoop2.7"
+
+- hosts: all
+  tags:
+    - core
+  tasks:
+    - name: mkdir spark
+      file:
+        path: "{{ spark_root }}"
+        state: directory
+    - apt:
+        name:
+          - openjdk-8-jre-headless
+          - virtualenv
+        state: present
+    - apt_repository:
+        repo: ppa:deadsnakes/ppa
+    - apt:
+        name: python3.5
+        state: present
+        update_cache: yes
+    - lineinfile:
+        path: /etc/environment
+        regexp: "^JAVA_HOME="
+        line: "JAVA_HOME=/usr/lib/jvm/java-8-openjdk-amd64/"
+
+- hosts: all
+  gather_facts: no
+  tags:
+   - venv
+  tasks:
+    - pip:
+        name:
+          - numpy
+          - pandas
+          - validators
+        virtualenv:
+          /root/spark_venv
+        virtualenv_python:
+          python3.5
+
+- hosts: all
+  serial: 3
+  gather_facts: no
+  tags:
+    - core
+  tasks:
+    - name: Download spark
+      unarchive:
+       src: https://archive.apache.org/dist/spark/spark-2.4.0/spark-2.4.0-bin-hadoop2.7.tgz
+       dest: "{{ spark_root }}"
+       remote_src: yes
+       creates: "{{ spark_dir }}"
+
+- hosts: all
+  tags:
+    - core
+  tasks:
+    - template:
+        src: spark-env.sh.jinja2
+        dest: "{{ spark_dir }}/conf/spark-env.sh"
+
+
+- hosts: spark_master
+  gather_facts: no
+  tags:
+    - start_master
+    - start
+  tasks:
+    - shell: "{{ spark_dir }}/sbin/start-master.sh"
+
+- hosts: spark_master
+  gather_facts: no
+  tags:
+    - stop_master
+    - stop
+  tasks:
+    - shell: "{{ spark_dir }}/sbin/stop-master.sh"
+
+- hosts: spark_nodes
+  tags:
+    - start_nodes
+    - start
+  tasks:
+    - shell: "{{ spark_dir }}/sbin/start-slave.sh 95.216.141.140:{{ spark_master_port }}"
+
+- hosts: spark_nodes
+  gather_facts: no
+  tags:
+    - stop_nodes
+    - stop
+  tasks:
+    - shell: "{{ spark_dir }}/sbin/stop-slave.sh"
