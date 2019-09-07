@@ -185,10 +185,10 @@ def classification_quality_report(model, X_train, X_test, y_train, y_test,
     ax4.hist(y_hat_test)
     ax4.set_title('Test predict probability distribution', size=16)
 
-    print 'Порог:', cutoff
-    print 'Принцип выбора порога:', principle
-    print 'Процентов теста в бане: ', round(100*np.mean(y_hat_test > cutoff),2)
-    print 'lift: {0:.2f}'.format(len(y_test)*precision_score(y_test, y_hat_test > cutoff)/(sum(y_test))), '\n'
+    print('Порог:', cutoff)
+    print('Принцип выбора порога:', principle)
+    print('Процентов теста в бане: ', round(100*np.mean(y_hat_test > cutoff),2))
+    print('lift: {0:.2f}'.format(len(y_test)*precision_score(y_test, y_hat_test > cutoff)/(sum(y_test))), '\n')
 
     report = classification_report(y_test, y_hat)
     print(report)
