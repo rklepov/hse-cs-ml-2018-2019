@@ -1,3 +1,7 @@
+> https://github.com/MyLtYkRiTiK/hse2018
+
+---
+
 # hse2018
 * Линейная регрессия: https://github.com/MyLtYkRiTiK/hse2018/tree/master/Lect3
 * Lasso и Ridge: https://github.com/MyLtYkRiTiK/hse2018/tree/master/Lect4
