@@ -1,3 +1,0 @@
-1st homework
-
-Edges, Canny edge detector
